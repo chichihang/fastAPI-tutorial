@@ -21,8 +21,9 @@ async def fetch_all_user():
     return users
 
 
-async def create_user(user):
-    document = user
+async def create_user(user_name: str, age: int):
+    user = User(user_name, age)
+    document = user.dict()
     result = await collection.insert_one(document)
     return result
 

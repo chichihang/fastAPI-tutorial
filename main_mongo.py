@@ -36,8 +36,8 @@ async def get_user_by_id(user_name: str):
     raise HTTPException(404, f'Cannot find user name: {user_name}')
 
 @app.post('/mongo-test/create-user', response_model=User)
-async def create_user_to_mongo(user: User):
-    response = await create_user(user=user.dict())
+async def create_user_to_mongo(user_name: str, age: int):
+    response = await create_user(user_name=user_name, age=age)
     if response:
         return {'input data': response}
     raise HTTPException(400, 'Bad Request, try again')
