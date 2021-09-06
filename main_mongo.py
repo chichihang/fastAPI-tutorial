@@ -4,6 +4,9 @@ from pydantic import BaseModel # helps to auto create JSON shcemas from the mode
 from fastapi.middleware.cors import CORSMiddleware
 from model import User, UpdateUser
 from database import fetch_one_user, fetch_all_user, create_user, update_user, delete_user
+import asyncio
+
+
 #Fast API doc: https://fastapi.tiangolo.com/
 #pydantic doc: https://pydantic-docs.helpmanual.io/
 
