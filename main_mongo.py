@@ -43,11 +43,11 @@ def create_user_to_mongo(user: User):
     raise HTTPException(400, 'Bad Request, try again')
 
 @app.put('/mongo-test/update-user{user_name}/', response_model=User)
-async def put_user(user_name: str, age: int):
-    response = await update_user(user_name=user_name, age=age)
+async def put_user(user: User):
+    response = await update_user(user)
     if response:
         return response
-    raise HTTPException(404, f'Cannot find user name: {user_name}')
+    raise HTTPException(404, f'Cannot find user name: {user.user_name}')
 
 @app.delete('/mongo-test/delete-user')
 async def del_user(user_name: str):
