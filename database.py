@@ -2,7 +2,7 @@ from model import User
 
 import motor.motor_asyncio # MongoDB driver
 
-client = motor.motor_asyncio.AsyncIOMotorClient('mongodb+srv://dbHang:asdqwe123@hellodb.jso7j.mongodb.net/DataFromWebApp?retryWrites=true&w=majority')
+client = motor.motor_asyncio.AsyncIOMotorClient('')
 # for connection of database.py and MongoDB
 
 database = client.DataFromWebApp
